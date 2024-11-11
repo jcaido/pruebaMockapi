@@ -15,4 +15,8 @@ public class UserService {
     public void saveUser(UserDto user) {
 
     }
+
+    public void updateUser(Integer id, UserDto user) {
+
+    }
 }
