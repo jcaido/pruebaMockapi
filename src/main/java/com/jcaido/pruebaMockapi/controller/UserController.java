@@ -21,4 +21,15 @@ public class UserController {
     public void saveUser(@RequestBody UserDto user) {
 
     }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateUser(@PathVariable("id") Integer id, @RequestBody UserDto user) {
+
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable("id") Integer id) {
+
+    }
 }
