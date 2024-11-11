@@ -19,4 +19,8 @@ public class UserService {
     public void updateUser(Integer id, UserDto user) {
 
     }
+
+    public void deleteUser(Integer id) {
+
+    }
 }
