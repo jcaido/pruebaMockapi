@@ -26,7 +26,7 @@ public class UserService {
     }
 
     public void saveUser(UserDto user) {
-
+        restTemplate.postForObject(basePath + "/users", user, UserDto.class);
     }
 
     public void updateUser(Integer id, UserDto user) {
