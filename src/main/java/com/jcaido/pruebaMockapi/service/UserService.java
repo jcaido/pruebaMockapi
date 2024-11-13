@@ -34,6 +34,6 @@ public class UserService {
     }
 
     public void deleteUser(Integer id) {
-
+        restTemplate.delete(basePath + "/users/" + id);
     }
 }
