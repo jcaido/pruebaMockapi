@@ -10,16 +10,16 @@ import org.springframework.web.context.request.WebRequest;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceAlreadyExistException.class)
-    public ResponseEntity<ErrorDatails> handleResourceAlreadyExistException(ResourceAlreadyExistException exception, WebRequest webRequest) {
-        ErrorDatails errorDatails = new ErrorDatails(exception.getMessage(), webRequest.getDescription(false));
+    public ResponseEntity<ErrorDetails> handleResourceAlreadyExistException(ResourceAlreadyExistException exception, WebRequest webRequest) {
+        ErrorDetails errorDetails = new ErrorDetails(exception.getMessage(), webRequest.getDescription(false));
 
-        return new ResponseEntity<>(errorDatails, HttpStatus.CONFLICT);
+        return new ResponseEntity<>(errorDetails, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorDatails> handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest webRequest) {
-        ErrorDatails errorDatails = new ErrorDatails(exception.getMessage(), webRequest.getDescription(false));
+    public ResponseEntity<ErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest webRequest) {
+        ErrorDetails errorDetails = new ErrorDetails(exception.getMessage(), webRequest.getDescription(false));
 
-        return new ResponseEntity<>(errorDatails, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 }
