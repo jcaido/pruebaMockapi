@@ -30,7 +30,7 @@ public class UserService {
     }
 
     public void updateUser(Integer id, UserDto user) {
-
+        restTemplate.put(basePath + "/users/" + id, user);
     }
 
     public void deleteUser(Integer id) {
