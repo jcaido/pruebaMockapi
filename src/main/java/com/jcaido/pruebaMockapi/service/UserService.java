@@ -66,6 +66,13 @@ public class UserService {
     }
 
     public void deleteUser(Integer id) {
+
+        try {
+            restTemplate.getForObject(basePath + "/users/" + id, UserDto.class);
+        } catch (HttpClientErrorException.NotFound e) {
+            throw new ResourceNotFoundException("user", "id", String.valueOf(id));
+        }
+
         restTemplate.delete(basePath + "/users/" + id);
     }
 }
